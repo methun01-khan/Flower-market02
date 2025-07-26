@@ -1,0 +1,447 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #E55473;
+    --secondary-color: #272727;
+    --text-color-light: #FFFFFF;
+    --bg-light-pink: rgba(229, 84, 115, 0.10);
+    --font-family: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--secondary-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.section-header p {
+    color: rgba(39, 39, 39, 0.60);
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 18px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #c03956;
+}
+
+/* --- 1. Navbar --- */
+header {
+    background: var(--bg-light-pink);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* --- 2. Banner Section --- */
+.banner {
+    background: var(--bg-light-pink);
+    padding: 50px 0;
+}
+.banner-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.banner-text {
+    flex: 1;
+}
+
+.banner-text h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.banner-text p {
+    color: rgba(39, 39, 39, 0.60);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.banner-image {
+    flex: 1;
+}
+
+.banner-image img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+/* --- 3. Featured Plants Section --- */
+.featured-plants {
+    padding: 100px 0;
+}
+.plant-card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.plant-card {
+    text-align: center;
+}
+.card-img {
+    background: var(--bg-light-pink);
+    border-radius: 300px 300px 0 0;
+    padding: 30px 30px 0 30px;
+    margin-bottom: 20px;
+}
+.card-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.plant-card h3 {
+    text-decoration: underline;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.plant-card .price {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.btn-add-cart {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-add-cart:hover {
+    color: var(--primary-color);
+}
+
+/* --- 4. Plant Lover Section --- */
+.plant-lover {
+    background: var(--bg-light-pink);
+    padding: 80px 0;
+}
+
+.plant-lover-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.plant-lover-image {
+    flex: 1;
+    position: relative; /* For badge positioning */
+}
+
+.plant-lover-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.plant-lover-text {
+    flex: 1;
+}
+
+.plant-lover-text h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.plant-lover-text ul {
+    list-style-position: inside;
+    color: rgba(39, 39, 39, 0.7);
+    margin-bottom: 30px;
+}
+
+.plant-lover-text ul li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* --- CHALLENGE 2: Trusted Badge & Animation --- */
+.trusted-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 2px solid var(--primary-color);
+}
+
+/* OPTIONAL: Animation */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.trusted-badge span {
+    display: inline-block;
+    animation: spin 4s linear infinite;
+}
+
+/* --- CHALLENGE 1: Latest Deals --- */
+.latest-deals {
+    padding: 100px 0;
+}
+
+.deal-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.deal-card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.deal-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.deal-card h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.deal-card p {
+    color: rgba(39, 39, 39, 0.60);
+    padding: 0 15px;
+}
+
+
+/* --- 5. Join Section --- */
+.join-section {
+    background-image: url('images/news-letter-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+    margin: 0 20px 100px 20px;
+}
+
+.join-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5); /* Dark overlay */
+    border-radius: 8px;
+}
+.join-content {
+    position: relative;
+    z-index: 1;
+    color: var(--text-color-light);
+}
+
+.join-content h2 {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.join-content p {
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.subscribe-form input {
+    width: 100%;
+    max-width: 500px;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* --- 6. Footer Section --- */
+.footer {
+    background-color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 80px 0 0 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-about {
+    max-width: 400px;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icons img {
+    width: 24px;
+    height: 24px;
+}
+.footer-links h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--text-color-light);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 14px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    /* General */
+    .section-header h2, .plant-lover-text h2, .join-content h2 { font-size: 32px; }
+    .banner-text h1 { font-size: 42px; }
+    
+    /* 1. Navbar */
+    .nav-menu { display: none; }
+    .cart-text { display: inline; }
+
+    /* 2. Banner */
+    .banner-content { flex-direction: column; }
+    .banner-text { text-align: left; }
+
+    /* 3. Plants Section */
+    .plant-card-container { grid-template-columns: repeat(2, 1fr); }
+    
+    /* 4. Plants Lover */
+    .plant-lover-content { flex-direction: column; gap: 40px; }
+    .plant-lover-text { text-align: left; }
+    .trusted-badge { display: none; } /* CHALLENGE: Hide badge */
+
+    /* CHALLENGE: Latest Deals */
+    .deal-card-container { grid-template-columns: 1fr; }
+    .deal-card:nth-child(n+2) { display: none; } /* Show only the first card */
+    
+    /* 5. Join Section */
+    .subscribe-form { flex-direction: column; align-items: center; }
+    .subscribe-form input { max-width: 100%; }
+
+    /* 6. Footer */
+    .footer-content { flex-direction: column; text-align: center; }
+    .footer-about { max-width: 100%; }
+    .social-icons { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .plant-card-container { grid-template-columns: 1fr; }
+    .card-img img { height: 300px; }
+}
